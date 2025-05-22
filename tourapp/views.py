@@ -7,21 +7,27 @@ from .models import *
 from django.contrib import messages
 from django.http import HttpResponseForbidden
 import razorpay
+from django.utils import timezone
 
 
 
 # Create your views here.
 def index(request):
+    available_packages = TourPackages.objects.filter(
+        available_to__gte=timezone.now(),
+        status__status='approved'
+    )
     # Fetching categorized packages
-    top_packages = TourPackages.objects.filter(price__gte=50000,status__status='approved')  # High-price packages
-    budget_packages =TourPackages.objects.filter(price__lte=25000,status__status='approved')  # Affordable packages
-    destination_packages =TourPackages.objects.filter(status__status='approved')  # Show all destinations
+    top_packages = available_packages.filter(price__gte=50000)  # High-price packages
+    budget_packages =available_packages.filter(price__lte=25000)  # Affordable packages
+    destination_packages =available_packages.filter()  # Show all destinations
     
     location_query = request.GET.get("location", None)  # Get location filter from user input
     if location_query:
-        destination_packages = destination_packages.filter(location__icontains=location_query)
+        destination_packages = available_packages.filter(location__icontains=location_query)
 
     return render(request, "index.html", {
+        'packages': available_packages,
         "top_packages": top_packages,
         "budget_packages": budget_packages,
         "destination_packages": destination_packages
