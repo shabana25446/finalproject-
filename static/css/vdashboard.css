@@ -1,0 +1,91 @@
+/* General Layout */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+}
+
+/* Dashboard Container */
+.dashboard-container {
+    display: flex;
+    width: 100%;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background: linear-gradient(180deg, #007bff, #0056b3);
+    color: white;
+    padding: 20px;
+    position: fixed;
+    left: 0;
+}
+
+.sidebar h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.sidebar h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+/* Navigation Links */
+.nav-link {
+    display: block;
+    padding: 12px;
+    margin: 8px 0;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.nav-link.btn-primary {
+    background: #28a745;
+    padding: 12px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.nav-link.btn-primary:hover {
+    background: #218838;
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 270px;
+    padding: 40px;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.main-content h2 {
+    font-size: 28px;
+    color: #007bff;
+}
+
+.main-content p {
+    font-size: 18px;
+    color: #555;
+}
+
+/* Footer */
+.footer {
+    background: #0e55b3;
+    color: white;
+    text-align: center;
+    padding: 7px;
+    position: fixed;
+    bottom: 0;
+    width: 20%;
+}

@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" initial-scale="1.0">
+    <meta content="package details | GoTravels" author="Shabana">
+    <title>{{ package.title }} - GoTravels</title>
+    <link rel="stylesheet" href="{% static 'css/details.css' %}">
+</head>
+<body>
+    <div class="details-container">
+        <img src="{{ package.image.url }}" alt="{{ package.title }}" class="main-image">
+        <h1>{{ package.title }}</h1>
+        <p><strong>Price:</strong> ₹{{ package.price }}</p>
+        <p><strong>From:</strong> {{ package.available_from }}</p>
+        <p><strong>To:</strong> {{ package.available_to }}</p>
+        <p><strong>Description:</strong> {{ package.description }}</p>
+        <p><strong>Itinerary:</strong> {{ package.itinerary }}</p>
+        <p><strong>To view more details please login</strong></p>
+        <a href="{% url 'ulogin' %}" class="btn">Login to Book</a>
+    </div>
+
+     <footer class="footer">
+        <p>&copy; 2025 GOTRAVELS | Designed for seamless travel experiences</p>
+    </footer>
+
+</body>
+</html>

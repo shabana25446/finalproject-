@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Vendor Bookings" author="Shabana">
+    <title>Vendor Bookings</title>
+    <link rel="stylesheet" href="{% static 'css/vendor_bookings.css' %}?v=2">
+</head>
+<body>
+    <div class="container">
+        <h1>Vendor Bookings</h1>
+        <p>Manage all your tour package bookings in one place.</p>
+
+        {% if bookings %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Customer</th>
+                    <th>Package</th>
+                    <th>Booked On</th>
+                    <th>No.of People</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for booking in bookings %}
+                <tr>
+                    <td>{{ booking.customer.username }}</td>
+                    <td>{{ booking.package.title }}</td>
+                    <td>{{ booking.booked_on|date:"d M, Y - H:i" }}</td>
+                    <td>{{ booking.number_of_people }}</td>
+                    <td class="status {{ booking.status }}">{{ booking.status }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <p class="no-bookings">No bookings found.</p>
+        {% endif %}
+    </div>
+    
+     
+</body>
+</html>

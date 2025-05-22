@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendor Dashboard | GoTravels</title>
+    <link rel="stylesheet" href="{% static 'css/vdashboard.css' %}">
+</head>
+<body>
+
+<div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2>GOTRAVELS</h2>
+        <h3>Welcome, {{ user.username }}</h3>
+        <nav>
+            <a href="{% url 'index' %}" class="nav-link">🏠 Home</a>
+            <a href="{% url 'vlogout' %}" class="nav-link">🚪 Logout</a>
+            <a href="{% url 'cpack' %}" class="nav-link btn-primary">✚ Create New Package</a>
+            <a href="{% url 'package_list' %}" class="nav-link"> Tour Packages</a>
+            <a href="{% url 'vendor_bookings' %}" class="nav-link">📋 Manage Bookings</a>
+        </nav>
+    </aside>
+
+    
+    <main class="main-content">
+        <h2>Vendor Dashboard</h2>
+        <p>Manage your packages and bookings efficiently.</p>
+    </main>
+</div>
+
+<footer class="footer">
+    <p>&copy; 2025 GOTRAVELS | Designed for seamless travel experiences</p>
+</footer>
+
+</body>
+</html>

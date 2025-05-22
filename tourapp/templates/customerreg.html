@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width" initial-scale="1.0">
+        <meta content="Customer registration" author="shabana">
+        <title>customer registration</title>
+        <link rel="stylesheet" href="{% static 'css/ureg.css' %}?v=2">
+        <script src="{% static 'javascript/ureg.js' %}"></script>
+        
+    </head>
+    <body>
+        
+        
+   <div class="registration-container">
+    <h1>GOTRAVELS</h1>
+    <h3>Sign Up</h3>
+    <p>Join us and explore incredible travel experiences with seamless bookings and exclusive packages. Start your journey today!</p>
+    <form method="POST" onsubmit="return validateForm()">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">Sign up</button>
+        <p>By proceeding, you agree to our <a href="{% url 'terms' %}">Terms of use</a>.</p>
+        <p id="error-message" class="error">Please fill in all fields correctly.</p>
+    </form>
+    <p class="login-link">Already registered? <a href="{% url 'ulogin' %}">Please Login</a></p>
+           </div>
+
+
+    </body>
+</html>

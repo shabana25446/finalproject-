@@ -1,0 +1,67 @@
+/* General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+    text-align: center;
+    padding: 50px;
+}
+
+/* Header */
+header {
+    font-size: 30px;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+/* Form Container */
+form {
+    background: white;
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Form Fields */
+form input, form textarea, form select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Save & Resubmit Button */
+button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    color: white;
+    background: #28a745;
+    border-radius: 6px;
+    text-decoration: none;
+    margin-top: 15px;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #218838;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer */
+.footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}

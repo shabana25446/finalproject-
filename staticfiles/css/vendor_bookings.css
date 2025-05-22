@@ -1,0 +1,75 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Container */
+.container {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+
+th {
+    background: #007bff;
+    color: white;
+    text-transform: uppercase;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Booking Status */
+.status {
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/* Status Colors */
+.status.pending {
+    color: orange;
+}
+.status.confirmed {
+    color: green;
+}
+.status.cancelled {
+    color: red;
+}
+
+/* No Bookings Message */
+.no-bookings {
+    color: #555;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

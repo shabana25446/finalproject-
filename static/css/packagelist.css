@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 20px;
+}
+.package-card {
+    max-width: 600px;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+
+h2 {
+    color: black;
+}
+
+.details {
+    margin-top: 10px;
+}
+.btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    color: #fff;
+    background: #28a745;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.footer {
+    background: #343a40;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}

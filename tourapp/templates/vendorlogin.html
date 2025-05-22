@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width" initial-scale="1.0">
+        <meta content="vendor registration" author="shabana">
+        <title>Vendor Login</title>
+        <link rel="stylesheet" href="{% static 'css/vlogin.css' %}">
+
+    </head>
+    <body>
+        
+        <div class="login-container">
+            <h1>GOTRAVELS</h1>
+            <h3>Vendor login</h3>
+            <h5>Join us and start managing your tour packages today!</h5>
+
+        <form method="POST">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button type="submit">Login</button>
+        </form>
+
+        {% if error %}
+        <p style="color: red;">{{ error }}</p>
+        {% endif %}
+
+        <p>Don't have an account? <a href="{% url 'vregis' %}">Register as Vendor</a></p>
+    </div>
+
+     
+    </body>
+
+    
+</html>

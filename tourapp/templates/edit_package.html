@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width" initial-scale="1.0">
+        <meta content="vendor registration" author="shabana">
+        <title>Edit Packages</title>
+        <link rel="stylesheet" href="{% static 'css/edit_package.css' %}">
+    </head>
+    <body>
+        <header>
+            <h1>GOTRAVELS</h1><!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width" initial-scale="1.0">
+        <meta content="edit rejected package" author="shabana">
+        <title>Edit Packages</title>
+    </head>
+    <body>
+        <header>
+            <h1>GOTRAVELS</h1>
+        </header>
+            <h2>Edit Rejected Package</h2>
+    <form method="post" enctype="multipart/form-data">
+     {% csrf_token %}
+     {{ form.as_p }}
+      <button type="submit">Save & Resubmit</button>
+    </form>
+
+     <footer class="footer">
+        <p>&copy; 2025 GOTRAVELS | Designed for seamless travel experiences</p>
+    </footer>
+
+    </body>
+</html>
+  

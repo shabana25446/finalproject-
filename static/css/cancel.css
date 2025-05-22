@@ -1,0 +1,53 @@
+/* General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+    text-align: center;
+    padding: 50px;
+}
+
+/* Header */
+header {
+    font-size: 30px;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+/* Cancellation Section */
+p {
+    font-size: 20px;
+    color: #dc3545;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Cancel Button */
+.btn {
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 18px;
+    color: white;
+    background: #dc3545;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #b72d3b;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer Styling */
+.footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}

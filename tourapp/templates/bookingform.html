@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="Home | GoTravels" author="Shabana">
+        <title>Package Booking</title>
+        <link rel="stylesheet" href="{% static 'css/cbooking.css' %}?v=3">
+
+    </head>
+<body>
+<header>
+    <h1>GOTRAVELS</h1>
+    <h3>Book incredible experiences</h3>
+</header>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn">Proceed to Payment</button>
+</form>
+
+ <footer class="footer">
+        <p>&copy; 2025 GOTRAVELS | Designed for seamless travel experiences</p>
+ </footer>
+
+
+</body>
+</html>

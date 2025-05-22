@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Customer Dashboard | GoTravels" author="Shabana">
+    <title>Your Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/bookedpack.css' %}?v=3">
+</head>
+<body>
+
+<div class="container mt-5">
+    <h2>My Booked Packages</h2>
+    <table class="table table-bordered mt-4">
+        <thead>
+            <tr>
+                <th>Package Title</th>
+                <th>Booking Date</th>
+                <th>No. of People</th>
+                <th>Phone Number</th>
+                <th>Payment Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for booking in bookings %}
+            <tr>
+                <td>{{ booking.package.title }}</td>
+                <td>{{ booking.booked_on|date:"M d, Y H:i" }}</td>
+                <td>{{ booking.no_of_people }}</td>
+                <td>{{ booking.phone_number }}</td>
+                <td>{{ booking.payment_status|title }}</td>
+                <td>
+        {% if booking.payment_status == "confirmed" %}
+            <span class="status confirmed">Confirmed</span>
+        {% elif booking.payment_status == "pending" %}
+            <span class="status pending">Pending</span>
+        {% elif booking.payment_status == "cancelled" %}
+            <span class="status cancelled">Cancelled</span>
+        {% else %}
+            <span class="status unknown">Unknown</span>
+        {% endif %}
+    </td>
+    <td>
+        {% if booking.payment_status == "pending" %}
+            <a href="{% url 'cancel_booking' booking.id %}" class="cancel-btn">Cancel</a>
+        {% else %}
+            <span class="na-text">N/A</span>
+        {% endif %}
+    </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="5" class="text-center">No bookings found.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<footer class="footer">
+    <p>&copy; 2025 GOTRAVELS | Designed for seamless travel experiences</p>
+</footer>
+
+</body>
+</html>

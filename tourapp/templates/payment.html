@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/payment.css' %}">
+</head>
+<body>
+
+<header>
+    <h1>GOTRAVELS</h1>
+</header>
+
+<div class="payment-container">
+    <h2>Complete Your Payment</h2>
+    <p>Secure payment for <strong>{{ booking.package.title }}</strong></p>
+
+    <button id="pay-btn">Pay Now</button>
+</div>
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+    var options = {
+        "key": "{{ razorpay_key }}",
+        "amount": "{{ amount }}",
+        "currency": "INR",
+        "name": "Tour Booking",
+        "description": "Payment for {{ booking.package.title }}",
+        "order_id": "{{ order_id }}",
+        "handler": function (response){
+            window.location.href = "/confirm_payment/{{ booking.id }}/";
+
+        },
+        "modal": {
+            "ondismiss": function () {
+                window.location.href = "/cancel/{{ booking.id }}/";
+
+            }
+        },
+        "prefill": {
+            "name": "{{ booking.customer.username }}",
+            "email": "{{ booking.customer.email|default:'' }}",
+            "contact": "{{ booking.phone_number }}"
+        },
+        "theme": {
+            "color": "#3399cc"
+        }
+    };
+
+    var rzp = new Razorpay(options);
+    document.getElementById('pay-btn').onclick = function(e){
+        rzp.open();
+        e.preventDefault();
+    }
+</script>
+
+<footer class="footer">
+    <p>&copy; 2025 GOTRAVELS | Designed for seamless travel experiences</p>
+</footer>
+
+</body>
+</html>

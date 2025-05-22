@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Customer Dashboard | GoTravels" author="Shabana">
+    <title>Your Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/cdashboard.css' %}">
+</head>
+<body>
+
+<div class="dashboard-container">
+    <!-- Side Menu Bar -->
+    <aside class="sidebar">
+        <h2>GOTRAVELS</h2>
+        <h3>Welcome, {{ user.username }}</h3>
+        <nav>
+            <a href="{% url 'index' %}" class="nav-link">Home</a>
+            <a href="{% url 'clogout' %}" class="nav-link">Logout</a>
+            <a href="{% url 'booked_packages' %}" class="nav-link">Booked Packages</a>
+        </nav>
+        <div class="weather-info">
+            <p>🌥️ 28°C | Cloudy</p>
+            <p>📅 {{ current_date }}</p>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="package-section">
+        <h2>Available Packages</h2>
+        <div class="package-list">
+            {% for package in packages %}
+            <div class="package-card">
+                <img src="{{ package.image.url }}" alt="{{ package.title }}">
+                <h3>{{ package.title }}</h3>
+                <p>{{ package.description }}</p>
+                <p>{{package.available_from}}</p>
+                <p>{{package.available_to}}</p>
+                <p>{{package.location}}</p>
+                <p>₹{{ package.price }}</p>
+                <a href="{% url 'book_package' package.id %}" class="btn">Book Now</a>
+            </div>
+            {% endfor %}
+        </div>
+    </main>
+</div>
+
+<footer class="footer">
+    <p>&copy; 2025 GOTRAVELS | Designed for seamless travel experiences</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="Home | GoTravels" author="Shabana">
+        <title>Booking Cancel Page</title>
+        <link rel="stylesheet" href="{% static 'css/cancel.css' %}?v=3">
+    </head>
+    
+<body>
+    <header>GOTRAVELS</header>
+
+
+<p>Are you sure you want to cancel your booking?</p>
+<a href="{% url 'cancel_booking' booking.id %}" class="btn">Cancel Booking</a>
+
+
+ <footer class="footer">
+        <p>&copy; 2025 GOTRAVELS | Designed for seamless travel experiences</p>
+    </footer>
+</body>
+</html>

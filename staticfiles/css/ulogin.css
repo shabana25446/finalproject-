@@ -1,0 +1,90 @@
+/* General Page Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Container for Login Form */
+.login-container {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Header Styling */
+h1 {
+    color: #007bff;
+    margin-bottom: 10px;
+}
+h3 {
+    color: #041c36;
+    margin-bottom: 10px;
+}
+h5 {
+    font-size: 14px;
+    color: #555;
+}
+
+
+form {
+    margin-top: 20px;
+}
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Login Button */
+button {
+    width: 100%;
+    padding: 10px;
+    background: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+button:hover {
+    background: #218838;
+}
+
+
+.error {
+    color: red;
+    font-size: 12px;
+    display: none;
+}
+
+
+p {
+    font-size: 14px;
+}
+a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width" initial-scale="1.0">
+        <meta content="vendor registration" author="shabana">
+        <title>Create Packages</title>
+        <link rel="stylesheet" href="{% static 'css/create_package.css' %}?v=2">
+
+    </head>
+    <body>
+        <div class="package-container">
+        <header>
+            <h1>GOTRAVELS</h1>
+            <h2>Craft Unforgettable Journeys: Design Your Perfect Tour Package!</h2>
+        </header>
+        
+            <form method="post" enctype="multipart/form-data" onsubmit="return confirm('Are you sure you want to submit?')">
+                {% csrf_token %}
+                {{form.as_p}}
+                <button type="submit" name="submit_for_approval">Submit for approval</button>
+                <button type="reset" name="reset">Reset</button>
+                <button type="submit" name="save_draft">Save as draft</button><br><br>
+            </form>
+        </div>
+
+    <footer class="footer">
+        <p>&copy; 2025 GOTRAVELS | Designed for seamless travel experiences</p>
+    </footer>
+
+    </body>
+            
+</html>   

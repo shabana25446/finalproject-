@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width" initial-scale="1.0">
+        <meta content="vendor registration" author="shabana">
+        <title>Vendor registration</title>
+        <link rel="stylesheet" href="{% static 'css/vreg.css' %}?v=2">
+        <script src="{% static 'javascript/vreg.js' %}"></script>
+        
+    </head>
+    <body>
+        
+        
+   <div class="registration-container">
+    <h1>GOTRAVELS</h1>
+    <h3>Register as Vendor</h3>
+    <p>Join our platform today and unlock endless opportunities to showcase your tour packages!</p>
+    <form method="POST" onsubmit="return validateForm()">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">Register</button>
+        <p>By proceeding, you agree to our <a href="{% url 'terms' %}">Terms of use</a>.</p>
+        <p id="error-message" class="error">Please fill in all fields correctly.</p>
+    </form>
+    <p class="login-link">Already registered? <a href="{% url 'vlogin' %}">Please Login</a></p>
+           </div>
+
+
+    </body>
+</html>

@@ -1,0 +1,93 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="Home | GoTravels" author="Shabana">
+        <title>GOTRAVELS Home</title>
+        <link rel="stylesheet" href="{% static 'css/index.css' %}?v=3">
+        <script src="{% static 'javascript/index.js' %}?v=2"></script>
+        
+    </head>
+    
+    <body background="static/images/home image.png">
+    
+    <header class="hero">
+        <div class="overlay"></div> 
+        <div class="text-container">
+            
+            <h1 class="fade-in">Welcome to GOTRAVELS</h1>
+            <p class="slide-up">Your gateway to unforgettable journeys!</p>
+            <nav class="button-container">
+                <a href="{% url 'ulogin' %}" class="btn pulse">Book Your Package</a>
+                <a href="{% url 'vlogin' %}" class="btn pulse">Start Selling Tours</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="content">
+        <h2 class="slide-in">Discover Amazing Travel Packages</h2>
+        <p class="fade-text">Explore customized tour packages and connect with reliable vendors for a seamless booking experience.</p>
+    </section>
+    
+    <div class="filters">
+    <input type="text" placeholder="Search by destination..." id="searchBar">
+    <select id="filterDropdown">
+        <option value="all">All Packages</option>
+        <option value="top">Top Packages</option>
+        <option value="budget">Budget-Friendly</option>
+    </select>
+</div>
+
+<div class="package-section" data-category="top">
+    <h2>Top Packages</h2>
+    <div class="package-list">
+        {% for package in top_packages %}
+        <div class="package-card" data-location="{{ package.location }}">
+            <img src="{{ package.image.url }}" alt="{{ package.title }}">
+            <h3>{{ package.title }}</h3>
+            <p class="price">₹{{ package.price }}</p>
+            <a href="{% url 'package_details' package.id %}" class="btn">Book Now</a>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+
+<div class="package-section" data-category="budget">
+    <h2>Budget-Friendly Packages</h2>
+    <div class="package-list">
+        {% for package in budget_packages %}
+        <div class="package-card" data-location="{{ package.location }}">
+            <img src="{{ package.image.url }}" alt="{{ package.title }}">
+            <h3>{{ package.title }}</h3>
+            <p class="price">₹{{ package.price }}</p>
+            <a href="{% url 'package_details' package.id %}" class="btn">Book Now</a>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="package-section" data-category="destination">
+    <h2>Explore by Destination</h2>
+    <div class="package-list">
+        {% for package in destination_packages %}
+        <div class="package-card" data-location="{{ package.location }}">
+            <img src="{{ package.image.url }}" alt="{{ package.title }}">
+            <h3>{{ package.title }}</h3>
+            <p class="price">₹{{ package.price }}</p>
+            <a href="{% url 'package_details' package.id %}" class="btn">Book Now</a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+    <footer class="footer">
+        <p>&copy; 2025 GOTRAVELS | Designed for seamless travel experiences</p>
+    </footer>
+
+
+</body>
+</html>

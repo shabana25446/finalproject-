@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html> 
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width" initial-scale="1.0">
+        <meta content="edit package" author="shabana">
+        <title>Edit Packages</title>
+        <link rel="stylesheet" href="{% static 'css/epack.css' %}">
+    </head>
+    <body>
+        <header>
+            <h1>GOTRAVELS</h1>
+            <h2>Edit Tour Package</h2>
+
+  <p><strong>Note:</strong> Once submitted, you may not be able to edit it depending on approval status.</p>
+
+     <form method="post" enctype="multipart/form-data">
+       {% csrf_token %}
+       {{ form.as_p }}
+       <button type="submit">Save Changes</button>
+       <a href="{% url 'package_list' %}">Cancel</a>
+      </form>
+    
+    <footer class="footer">
+        <p>&copy; 2025 GOTRAVELS | Designed for seamless travel experiences</p>
+    </footer>
+
+    </body>
+            
+</html>   

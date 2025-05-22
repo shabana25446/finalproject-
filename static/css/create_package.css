@@ -1,0 +1,100 @@
+/* General Page Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Container for Form */
+.package-container {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Header Styling */
+h1 {
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: #041c36;
+    margin-bottom: 20px;
+}
+
+/* Form Styling */
+form {
+    margin-top: 20px;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Buttons Styling */
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button[name="submit_for_approval"] {
+    background-color: #28a745;
+    color: white;
+}
+
+button[name="reset"] {
+    background-color: #ff5733;
+    color: white;
+}
+
+button[name="save_draft"] {
+    background-color: #007bff;
+    color: white;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+/* Confirmation Prompt Styling */
+form::after {
+    content: "Ensure all details are correct before submitting.";
+    display: block;
+    font-size: 12px;
+    color: #555;
+    margin-top: 10px;
+}
+
+.footer {
+    background: #343a40;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}

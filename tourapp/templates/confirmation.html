@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="Home | GoTravels" author="Shabana">
+        <title>Confirmation Page </title>
+        <link rel="stylesheet" href="{% static 'css/confirm.css' %}?v=3">
+    </head>
+<body>
+    
+<h2>Booking Confirmed!</h2>
+<p>Your booking for {{ booking.package.title }} is confirmed.</p>
+
+ <footer class="footer">
+        <p>&copy; 2025 GOTRAVELS | Designed for seamless travel experiences</p>
+ </footer>
+
+</body>
+</html>

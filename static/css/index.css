@@ -1,0 +1,167 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Full-width background */
+.hero {
+    position: relative;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* Text Container */
+.text-container {
+    position: relative;
+    color: white;
+    z-index: 1;
+}
+
+/* Animated Header Text */
+.text-container h1 {
+    font-size: 50px;
+    font-weight: bold;
+    text-transform: uppercase;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+
+.text-container p {
+    font-size: 20px;
+    opacity: 0;
+    animation: slideUp 2s forwards 1s;
+}
+
+/* Navigation Buttons */
+.button-container {
+    margin-top: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 18px;
+    color: white;
+    background: #28a745;
+    border-radius: 5px;
+    text-decoration: none;
+    margin: 10px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #218838;
+}
+
+/* Button Animation - Pulsing Effect */
+.pulse {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Section Content Animation */
+.content {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+h2 {
+    font-size: 30px;
+    opacity: 0;
+    animation: slideIn 2s forwards;
+}
+
+p.fade-text {
+    font-size: 16px;
+    opacity: 0;
+    animation: fadeIn 3s forwards;
+}
+
+/* Footer */
+.footer {
+    background: #343a40;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+
+.package-section {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+/* Package Cards */
+.package-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.package-card {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    width: 250px;
+    text-align: center;
+    transition: 0.3s ease-in-out;
+}
+
+.package-card:hover {
+    transform: scale(1.05);
+}
+
+/* Filters */
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.filters input, .filters select {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
